@@ -28,7 +28,9 @@ const updatePerson = (req, res) => {
   const { id } = req.params;
   const { name } = req.body;
 
-  const person = people.find((person) => person.id === Number(id));
+    const person = people.find((person) =>
+        person.id === Number(id)
+    );
 
   if (!person) {
     return res
@@ -45,7 +47,9 @@ const updatePerson = (req, res) => {
 };
 
 const deletePerson = (req, res) => {
-  const person = people.find((person) => person.id === Number(req.params.id));
+    const person = people.find((person) =>
+        person.id === Number(req.params.id)
+    );
   if (!person) {
     return res
       .status(404)
@@ -57,10 +61,4 @@ const deletePerson = (req, res) => {
   return res.status(200).json({ success: true, data: newPeople });
 };
 
-module.exports = {
-  getPeople,
-  createPerson,
-  createPersonPostman,
-  updatePerson,
-  deletePerson,
-};
+module.exports = {getPeople, createPerson, createPersonPostman, updatePerson, deletePerson };
