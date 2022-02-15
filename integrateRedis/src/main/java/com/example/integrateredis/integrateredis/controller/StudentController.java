@@ -21,25 +21,15 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping("/student")
-    public ResponseEntity<String> saveStudent(@RequestBody Student student) {
-        boolean res = studentService.saveStudent(student);
-        if(res)
-            return ResponseEntity.ok("student created ");
-        else
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    public Student saveStudent(@RequestBody Student student) {
+        return studentService.saveStudent(student);
     }
 
 
-    @GetMapping("/student")
-    public ResponseEntity<List<Student>> getAllStudent(){
-        List<Student> studentList;
-        studentList = studentService.getAllStudent();
 
-        return ResponseEntity.ok(studentList);
-    }
 
     @GetMapping("/student/{id}")
-    @Cacheable(value="student_id", key="#id", condition="#id!=null")
+
     public Student getStudentById(@PathVariable("id") Integer student_id){
         return studentService.getStudentById(student_id);
     }

@@ -1,5 +1,6 @@
 package com.example.integrateredis.integrateredis.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,27 +12,27 @@ public class Student implements Serializable {
     public Student() {
     }
 
-    public Integer getStudent_id() {
-        return student_id;
+    public Integer getId() {
+        return id;
     }
 
     public Student(Integer student_id, String stud_name, String address, Integer course_id) {
-        this.student_id = student_id;
-        this.stud_name = stud_name;
+        this.id = student_id;
+        this.studName = stud_name;
         this.address = address;
-        this.course_id = course_id;
+        this.courseId = course_id;
     }
 
-    public void setStudent_id(Integer student_id) {
-        this.student_id = student_id;
+    public void setId(Integer student_id) {
+        this.id = student_id;
     }
 
-    public String getStud_name() {
-        return stud_name;
+    public String getStudName() {
+        return studName;
     }
 
-    public void setStud_name(String stud_name) {
-        this.stud_name = stud_name;
+    public void setStudName(String stud_name) {
+        this.studName = stud_name;
     }
 
     public String getAddress() {
@@ -42,20 +43,23 @@ public class Student implements Serializable {
         this.address = address;
     }
 
-    public Integer getCourse_id() {
-        return course_id;
+    public Integer getCourseId() {
+        return courseId;
     }
 
-    public void setCourse_id(Integer course_id) {
-        this.course_id = course_id;
+    public void setCourseId(Integer course_id) {
+        this.courseId = course_id;
     }
 
     @Id
+    @Column(name="student_id")
     @GeneratedValue
-    private Integer student_id;
-    private String stud_name;
+    private Integer id;
+    private String studName;
     private String address;
-    private Integer course_id;
+
+    @Column(name="course_id")
+    private Integer courseId;
 
 
 }

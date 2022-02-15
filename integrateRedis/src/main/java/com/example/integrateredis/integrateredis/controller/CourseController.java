@@ -14,7 +14,7 @@ public class CourseController {
     private CourseService courseService;
 
     @PostMapping("/course")
-    public boolean saveCourse(@RequestBody Course course){
+    public Course saveCourse(@RequestBody Course course){
         return courseService.saveCourse(course);
     }
 

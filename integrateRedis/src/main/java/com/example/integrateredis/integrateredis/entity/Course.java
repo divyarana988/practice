@@ -1,30 +1,32 @@
 package com.example.integrateredis.integrateredis.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+
 public class Course implements Serializable {
 
     @Id
-    private Integer course_Id;
+    @Column(name="course_id")
+   // @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer courseId;
 
     public Course() {
     }
 
-    public Integer getCourse_Id() {
-        return course_Id;
+    public Integer getCourseId() {
+        return courseId;
     }
 
     public Course(Integer course_Id, String courseName, String courseDesc) {
-        this.course_Id = course_Id;
+        this.courseId = course_Id;
         this.courseName = courseName;
         this.courseDesc = courseDesc;
     }
 
-    public void setCourse_Id(Integer course_Id) {
-        this.course_Id = course_Id;
+    public void setCourseId(Integer course_Id) {
+        this.courseId = course_Id;
     }
 
     public String getCourseName() {

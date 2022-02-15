@@ -5,9 +5,9 @@ import com.example.integrateredis.integrateredis.entity.Student;
 import java.util.List;
 
 public interface StudentService {
-    boolean saveStudent(Student student);
+    Student saveStudent(Student student);
 
-    List<Student> getAllStudent();
+
 
     
 
