@@ -28,7 +28,6 @@ public class StudentController {
     }
 
     @GetMapping("/student/{id}")
-    @Cacheable()
     public Student getStudentById(@PathVariable("id") Integer student_Id){
         return studentService.getStudentById(student_Id);
     }

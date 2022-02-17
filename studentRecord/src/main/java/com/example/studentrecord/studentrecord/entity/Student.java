@@ -10,8 +10,8 @@ import java.io.Serializable;
 
 
 @Entity
-@RedisHash("Student")
-public class Student implements Serializable {
+
+public class Student {
 
 
     @Id

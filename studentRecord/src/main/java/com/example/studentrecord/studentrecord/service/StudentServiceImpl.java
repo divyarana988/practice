@@ -15,11 +15,11 @@ public class StudentServiceImpl implements StudentService{
     @Autowired
     private StudentRepository studentRepository;
 
-    private RedisTemplate redisTemplate;
-
 
     @Override
     public Student saveStudent(Student student) {
+
+
         return studentRepository.save(student);
     }
 
