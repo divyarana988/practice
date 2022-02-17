@@ -23,6 +23,12 @@ public class CourseController {
         return courseService.getCourseList();
     }
 
+
+     @PutMapping("/course/{id}")
+    public Course updateCourseById(@PathVariable("id") Integer course_Id, @RequestBody Course course){
+        return courseService.updateCourseById(course_Id, course);
+    }
+
     @GetMapping("/course/{id}")
     public Course getCourseById(@PathVariable("id") Integer course_Id){
         return courseService.getCourseById(course_Id);

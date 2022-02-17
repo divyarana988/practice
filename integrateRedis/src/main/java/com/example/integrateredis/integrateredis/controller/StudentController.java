@@ -26,6 +26,10 @@ public class StudentController {
     }
 
 
+    @GetMapping("/student")
+    public List<Student> getCourseList(){
+        return studentService.getStudentList();
+    }
 
 
     @GetMapping("/student/{id}")
@@ -38,5 +42,10 @@ public class StudentController {
     public String deleteStudentById(@PathVariable("id") Integer student_Id){
         return studentService.delStudentById(student_Id);
 
+    }
+
+    @PutMapping("/student/{id}")
+    public Student updateStudentById(@PathVariable("id") Integer student_Id, @RequestBody Student student){
+        return studentService.updateStudentById(student_Id, student);
     }
 }
